@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ${appLabel}-pvc
+  namespace: ${appLabel}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: efs-sc
+  resources:
+    requests:
+      storage: ${config.size}
